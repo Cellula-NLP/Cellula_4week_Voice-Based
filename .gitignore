@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+.env.local
+.env.*.local
+.venv/
+data/
+*.db
+*.sqlite3
+*.csv
+*.wav
+*.mp3
+*.m4a
