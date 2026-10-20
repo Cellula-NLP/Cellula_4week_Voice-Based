@@ -1,4 +1,3 @@
-# app/domain/ports.py
 """Abstract Ports (Interfaces) for Dependency Inversion."""
 from __future__ import annotations
 
@@ -23,9 +22,9 @@ class DatabaseManager(ABC):
     """Port for SQLite Database operations."""
 
     @abstractmethod
-    def create_table_from_csv(self, csv_path: str, table_name: str) -> tuple[int, list[ColumnSchema]]:
+    def create_table_from_csv(self, csv_path: str, table_name: str) -> tuple[str, int, list[ColumnSchema]]:
         """
-        Reads a CSV, creates a SQLite table, and returns row_count and schema.
+        Reads a CSV, creates a SQLite table, and returns (sanitized_table_name, row_count, schema).
         """
         ...
 
@@ -44,7 +43,7 @@ class DatabaseManager(ABC):
 
 
 class LLMProvider(ABC):
-    """Port for LLM interaction (Copied from old project, simplified)."""
+    """Port for LLM interaction."""
 
     @abstractmethod
     async def complete(

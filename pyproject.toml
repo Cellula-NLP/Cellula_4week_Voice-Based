@@ -24,6 +24,7 @@ dependencies = [
     # Audio (Speech-to-Text)
     "faster-whisper>=1.0.0",
     "python-multipart>=0.0.9",
+    "av>=11,<19"
 ]
 
 [project.optional-dependencies]

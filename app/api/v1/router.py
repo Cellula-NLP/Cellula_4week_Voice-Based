@@ -1,6 +1,6 @@
 """Aggregates all v1 endpoints."""
 from fastapi import APIRouter
-from app.api.endpoints import audio, dataset, query
+from app.api.v1.endpoints import audio, query, dataset
 
 api_router = APIRouter()
 api_router.include_router(dataset.router, prefix="/dataset", tags=["Dataset"])
